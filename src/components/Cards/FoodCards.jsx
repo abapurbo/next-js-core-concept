@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function FoodCard({ food }) {
@@ -23,12 +24,12 @@ export default function FoodCard({ food }) {
 
         {/* Buttons */}
         <div className="flex gap-3 mt-2">
-          <button className="flex-1 px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
+          <Link href={'/'} className="flex-1 px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
             Add to Cart
-          </button>
-          <button className="flex-1 px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-100 hover:text-black transition-colors">
+          </Link>
+          <Link href={`/foods/${food.id}`} className="flex-1 px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-100 hover:text-black transition-colors">
             View Details
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ export default function Header() {
         <div>
             <nav className="flex items-center  px-10  justify-between ">
                 <div>
-                    <img className="w-20" src="./images/logo.png" alt="logo" />
+                    <img className="w-20" src="/images/logo.png" alt="logo" />
                 </div>
                 <div className="space-x-3">
                     <Link className="btn" href='/foods'>Foods</Link>
