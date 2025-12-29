@@ -1,6 +1,6 @@
 const ReviewSkeleton = () => {
     return (
-        <div className="border rounded-xl p-5 shadow-sm bg-white flex gap-4 animate-pulse">
+        <div className="border h-86 rounded-xl p-5 shadow-sm bg-white flex gap-4 animate-pulse">
 
             {/* Avatar Skeleton */}
             <div className="w-18 h-18 rounded-full bg-gray-300"></div>
