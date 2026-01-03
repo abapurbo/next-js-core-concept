@@ -2,6 +2,18 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.themealdb.com',
+        // port: '',
+        pathname: '/images/media/**',
+        search: '',
+      },
+    ],
+  },
+
 };
 
 export default nextConfig;

@@ -1,10 +1,23 @@
 // app/foods/[id]/page.jsx  (App Router)
 import React from "react";
+export function generateStaticParams() {
+    return [{ id: '52878' }, { id: '52874' }, { id: '53071' }]
+}
+
+export async function generateMetadata({ params }) {
+    const { id } = await params;
+    const res = await fetch(`https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`)
+    const { details = {} } = await res.json();
+    
+    return {
+        title: details.title
+        // aikhane amra bibi noo meta data bosie amra seo firendly korte pari 
+    }
+}
 
 const getFoodDetails = async (id) => {
     const res = await fetch(`https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`)
     const data = await res.json();
-    await new Promise((resolve)=>setTimeout(resolve,3000))
     return data.details;
 }
 
