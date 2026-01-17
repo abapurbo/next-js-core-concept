@@ -4,7 +4,7 @@ import React from "react";
 export default function Header() {
     return (
         <div>
-            <nav className="flex items-center  px-10  justify-between ">
+            <nav className="flex items-center  px-10 py-4 justify-between ">
                 <div>
                     {/* <img className="w-20" src="/images/logo.png" alt="logo" /> */}
                     <Image width={40} height={40} src="/images/logo.png" alt="logo"></Image>
