@@ -12,6 +12,7 @@ export default function Header() {
                 <div className="space-x-3">
                     <Link className="btn" href='/foods'>Foods</Link>
                     <Link className="btn" href='/review'>Review</Link>
+                    <Link className="btn" href='/feedback'>Feedback</Link>
                 </div>
             </nav>
         </div>
