@@ -1,7 +1,7 @@
-import { feedback } from "../route";
+import { connect } from "@/app/lib/connectDB";
+const feedbackCollection = connect('feedbacks');
 
 export async function GET(request) {
-    const feedbackCollection = connect('feedbacks');
     const result = await feedbackCollection.find().toArray();
     return Response.json(result)
 }
@@ -14,11 +14,7 @@ export async function POST(request) {
             message: "Please send a message"
         })
     }
-    const newMessage = { message, id: feedback.length + 1 };
-    feedback.push(newMessage)
-
-    return Response.json({
-        status: 200,
-        data
-    })
+    const newFeedback = { message, data: new Date().toISOString() };
+    const result =await feedbackCollection.insertOne(newFeedback);
+    return Response.json(result)
 }
