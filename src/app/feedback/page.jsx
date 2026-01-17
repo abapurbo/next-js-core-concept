@@ -4,8 +4,8 @@ import React from "react";
 // get a user feedback 
 const getUserFeedback = async () => {
     const res = await fetch('http://localhost:3000/api/feedback',{
-        cache:'force-cache'
-        
+        cache:'force-cache',
+        next:{revalidate:60}
     })
     const data = await res.json();
     return data;

@@ -24,7 +24,7 @@ const getFoodDetails = async (id) => {
 export default async function FoodDetails({ params }) {
     const { id } = await params;
     const food = await getFoodDetails(id)
-    if (!food) return <div>
+    if (!food.title) return <div>
         <h1>Food not found</h1>
     </div>;
 

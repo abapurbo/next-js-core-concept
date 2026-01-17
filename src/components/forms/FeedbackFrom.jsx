@@ -1,11 +1,12 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 export default function FeedbackForm() {
+    const router = useRouter();
     const handleAddFeedback = (e) => {
         try {
             e.preventDefault();
             const feedback = e.target.feedback.value;
-
             fetch('http://localhost:3000/api/feedback', {
                 method: 'POST',
                 headers: {
@@ -13,7 +14,9 @@ export default function FeedbackForm() {
                 },
                 body: JSON.stringify({ message: feedback })
             })
-            feedback.value = '';
+            alert('Feedback added successfully')
+            e.target.reset()
+            router.push('/feedback')
         }
         catch (err) {
             console.log(err)
